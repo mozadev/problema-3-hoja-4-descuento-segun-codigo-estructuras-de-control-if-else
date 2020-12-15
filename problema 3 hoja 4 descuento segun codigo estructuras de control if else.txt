@@ -1,0 +1,44 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+using namespace System;
+
+void LeerDatos(long long Codigo,float Precio)
+{
+	cout << "Ingrese Codigo: ";
+	cin >> Codigo;
+	cout << "Ingrese Precio: ";
+	cin >> Precio;
+}
+int main()
+{
+	long long Codigo;
+	float Precio,Descuento;
+	int Digito;
+
+	LeerDatos(Codigo, Precio);
+	Digito = Codigo / pow(10, 5);
+	if (Digito == 4 || Digito == 9)
+	{
+		Descuento = 4.5 / 100;
+	}
+	else if (Digito == 1 || Digito == 5)
+	{
+		Descuento = 8 / 100;
+	}
+	else if (Digito == 2 || Digito == 6)
+	{
+		Descuento = 3.5 / 100;
+	}
+	else if (Digito == 8)
+	{
+		Descuento = 4.25 / 100;
+	}
+	else if (Digito == 3 || Digito == 7)
+	{
+		Descuento = 11 / 100;
+	}
+	cout << "Precio Final " << Precio - Precio*Descuento;
+	getch();
+	return 0;
+}
